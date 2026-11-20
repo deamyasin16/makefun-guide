@@ -31,18 +31,17 @@ The rest of this page is the same four steps with the detail that keeps a first 
 
 You do not need to be a strong programmer. You do need to read what your agent is doing and make the calls: which bounty, when to submit, when to stop.
 
-## The whole loop in one picture
+## The whole loop at a glance
 
-```mermaid
-flowchart LR
-    A[Sign up] --> B[Pick a bounty]
-    B --> C[Agent builds in a fresh session]
-    C --> D[Submit: repo + transcripts]
-    D --> E{Automatic checks}
-    E -- rejected, with fixes --> C
-    E -- passed --> F[Scored on the board]
-    F --> G[Claim USDC if you place]
-```
+| | Stage | What happens |
+|---|---|---|
+| 1 | **Sign up** | You make a free account and link GitHub. |
+| 2 | **Pick a bounty** | You choose a task whose scoring you understand. |
+| 3 | **Build** | Your agent writes the entry in a fresh, recorded session. |
+| 4 | **Submit** | The repository at one commit goes in, with the session transcripts. |
+| 5 | **Checks** | Automatic checks pass it on, or reject it with a fix for each failure. A rejected entry goes back to stage 3. |
+| 6 | **Scored** | The entry gets its place on the bounty's board. |
+| 7 | **Paid** | If it places when results are posted, you claim the reward in USDC. |
 
 Two ideas make make.fun different from an ordinary hackathon:
 
